@@ -1,8 +1,9 @@
 package com.ms.email.models;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+
+import com.ms.email.enums.StatusEmail;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,14 +24,14 @@ public class EmailModel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idEmail;
-    private String ownerRef;
-    private String emailFrom;
-    private String emailTo;
-    private String subject;
+    private String ownerRef; // Referência do proprietária que está mandando a mensagem
+    private String emailFrom; // De quem está mandando o e-mail
+    private String emailTo; // Para quem está mandando o e-mail
+    private String subject; // Título do e-mail
 
     @Column(columnDefinition = "TEXT")
-    private String text;
-    private LocalDateTime sendDateEmail;
-    private StatusEmail statusEmail;
+    private String text; // Corpo do e-mail
+    private LocalDateTime sendDateEmail; // Data que o e-mail será enviado
+    private StatusEmail statusEmail; // status do e-mail (se foi enviado corretamente ou se ocorreu algum erro)
 
 }
