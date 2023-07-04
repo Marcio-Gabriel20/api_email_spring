@@ -2,6 +2,7 @@ package com.ms.email.models;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import com.ms.email.enums.StatusEmail;
 
@@ -23,7 +24,7 @@ public class EmailModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idEmail;
+    private UUID idEmail;
     private String ownerRef; // Referência do proprietária que está mandando a mensagem
     private String emailFrom; // De quem está mandando o e-mail
     private String emailTo; // Para quem está mandando o e-mail
